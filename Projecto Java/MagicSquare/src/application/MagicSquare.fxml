@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="parentBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MagicSquareController">
+   <top>
+      <VBox alignment="TOP_CENTER" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" spacing="8.0">
+               <VBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <children>
+                  <Label text="Order" />
+                  <TextField fx:id="txtOrder" prefWidth="50.0" />
+                  <Label text="Starting Row" />
+                  <TextField fx:id="txtSRow" prefWidth="50.0" />
+                  <Label text="Starting Column" />
+                  <TextField fx:id="txtSColumn" prefWidth="50.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="200.0" spacing="8.0">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <children>
+                  <Label text="Direction of Magic Square" />
+                  <RadioButton fx:id="noRadioButton" mnemonicParsing="false" onAction="#selectDirectionToggle" selected="true" text="NO">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="directionToggleGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="neRadioButton" mnemonicParsing="false" onAction="#selectDirectionToggle" text="NE" toggleGroup="$directionToggleGroup" />
+                  <RadioButton fx:id="soRadioButton" mnemonicParsing="false" onAction="#selectDirectionToggle" text="SO" toggleGroup="$directionToggleGroup" />
+                  <RadioButton fx:id="seRadioButton" mnemonicParsing="false" onAction="#selectDirectionToggle" text="SE" toggleGroup="$directionToggleGroup" />
+               </children>
+            </HBox>
+            <Button fx:id="buttonSubmit" mnemonicParsing="false" onAction="#submitButtonPressed" text="Submit" />
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox fx:id="centerVbox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
